@@ -1,0 +1,10 @@
+# Your sixth SPARQL query:
+# People who are academic offspring of themselves
+SELECT DISTINCT ?human
+WHERE 
+{
+  ?human wdt:P31 wd:Q5 ; # find humans
+     (wdt:P1066 | ^wdt:P802)+
+         [wdt:P1066 | ^wdt:P802 ?student] # inverse student or student of 
+  FILTER(?student = ?human)
+}

@@ -1,0 +1,9 @@
+# Your second SPARQL query:
+#Rally car driver who died in a car accident 
+SELECT DISTINCT ?driver
+WHERE
+{
+  ?driver wdt:P31 wd:Q5 ; # find humans
+          wdt:P106 wd:Q10842936 ; # who drives in rally competitions
+          wdt:P509 wd:Q61037771  # who died in a car accident
+}

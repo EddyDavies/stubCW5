@@ -1,0 +1,8 @@
+# Your first SPARQL query:
+# Humans who died in a car crash
+SELECT DISTINCT ?human
+WHERE
+{
+  ?human wdt:P31 wd:Q5 ; # find humans
+         wdt:P509 wd:Q61037771  # who died in a car accident
+}

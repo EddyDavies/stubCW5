@@ -1,0 +1,11 @@
+# Your fifth SPARQL query:
+# Any academic offspring of a painter who is not a painter
+SELECT DISTINCT ?student
+WHERE 
+{
+  ?painter wdt:P31 wd:Q5 ; # find humans
+        wdt:P106 wd:Q1028181 . # who are painters
+  ?student  wdt:P31 wd:Q5 ; # find humans
+        (wdt:P1066 | ^wdt:P802)+  ?painter # inverse student or student of ?painter
+    MINUS { ?student wdt:P106 wd:Q1028181 . }
+}

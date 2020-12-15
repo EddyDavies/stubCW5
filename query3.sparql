@@ -1,0 +1,9 @@
+# Your third SPARQL query:
+# Painters who are students of Pablo 
+SELECT DISTINCT ?painter
+WHERE 
+{
+  ?painter wdt:P31 wd:Q5 ; # find humans
+           wdt:P106 wd:Q1028181 ; # who are painters
+           wdt:P1066 wd:Q5593 # student of Pablo Picasso     
+}
